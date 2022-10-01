@@ -1,0 +1,151 @@
+    1  ll
+    2  ls -l
+    3  cd /
+    4  ll
+    5  vim
+    6  yum install vim
+    7  sudo yum install vim
+    8  sudo su
+    9  sudo root
+   10  exit
+   11  sudo su
+   12  exit
+   13  sudo su
+   14  exit
+   15  exit
+   16  whoami
+   17  whoiam
+   18  whoami
+   19  echo "Hello world"
+   20  date
+   21  cal
+   22  man cal
+   23  cal -3
+   24  history
+   25  clear
+   26  cd /
+   27  cd ..
+   28  pwd
+   29  ls
+   30  ls /var
+   31  cd
+   32  cd ..
+   33  ll
+   34  cd
+   35  mkdir fruits
+   36  cd
+   37  cd /
+   38  mkdir ~/animals
+   39  touch /tmp/temp
+   40  cd ~/fruits/
+   41  mkdir apple banana pinaple lion
+   42  ll
+   43  rmdir *
+   44  ll
+   45  touch apple banana pineaple lion
+   46  touch ~/animals/cat.dxt ~/animals/dog.txt ~/animals/elephant.txt
+   47  ll
+   48  ls b*
+   49  cd /etc/passwd ~
+   50  cp /etc/passwd ~
+   51  cat /etc/issue
+   52  cp /etc/issue apple
+   53  ll
+   54  cat apple 
+   55  mv lion ~/animals/
+   56  mv pineaple pineapple
+   57  wc /etc/passwd
+   58  ln -s /etc/passwd passwd_link
+   59  ln .bash_history history_hard
+   60  ln ~/.bash_history history_hard
+   61  rm apple
+   62  cd ..
+   63  mkdir rmme
+   64  rm rmdir rmme
+   65  rmdir rmme
+   66  rm -rf fruits
+   67  cat /etc/passwd /var/log/boot.log
+   68  cp /etc/init.d/ ~
+   69  cp -r /etc/init.d/ ~
+   70  rmdir -rf init.d/
+   71  ll
+   72  rmdir -Rf init.d/
+   73  rm -rf init.d/
+   74  cut -d:f1 /etc/passwd | sort
+   75  cut -d: f1 /etc/passwd | sort
+   76  cut -d: -f1 /etc/passwd | sort
+   77  cut -d: -f1,3,4 /etc/passwd | column -ts: | less
+   78  cat /etc/passwd
+   79  cut -d: -f1,3 /etc/passwd | column -ts: | less
+   80  grep :/bin/bash /etc/passwd | wc -l
+   81  cat /etc/passwd
+   82  sudo yum install giy
+   83  sudo yum install git
+   84  cat /etc/passwd
+   85  grep :/bin/bash /etc/passwd | cut -d: -f1 | sort -r
+   86  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head 25
+   87  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head -25
+   88  rpm -qa --qf '%{NAME}: %{SIZE}\n' | sort -rn -k2,2 | head -25 | wc
+   89  rpm -ql man-db | xargs -l du 2> /dev/null | sort -n
+   90  top -b -n1 | sort -t
+   91  sort --help
+   92  sort --help | less
+   93  top -b -nq | sort 
+   94  top -b -n1 | sort 
+   95  top -b -n1 | sort | less
+   96  sort --help | less
+   97  top -b -n1 | sort | less
+   98  top -b -n1 | less
+   99  top -b -n1 | sort | less
+  100  top -b -n1 | sort -n11 | less
+  101  top -b -n1 | sort -n1 | less
+  102  top -b -n1 | sort -f1 | less
+  103  top -b -n1 | sort --word=PROSESS | less
+  104  sort --help | less
+  105  top -b -n1 | less
+  106  top -b -n1 | sort --sort=COMMAND | less
+  107  top -b -n1 | cut -d  -f11 | sort | less
+  108  top -b -n1 | cut -d -f11 | sort | less
+  109  top -b -n1 | cut -d' ' -f11 | sort | less
+  110  cut -d' ' -f5 | top -b -n1 | sort | less
+  111  cut -d -f5 | top -b -n1 | sort | less
+  112  cut -d$'\t' -f5 | top -b -n1 | sort | less
+  113  top -b -n1 | cut -c11- | sort | less
+  114  top -b -n1 | cut -f5 | sort | less
+  115  top -b -n1 | cut -f8 | sort | less
+  116  top -b -n1 | cut -f1 | sort | less
+  117  top -b -n1 | cut -c10- | sort | less
+  118  top -b -n1 | tr -s '' '\t' | cut -f11 | sort | less
+  119  top -b -n1 | tail -n+8 | tr -s '' '\t' | cut -f11 | sort | less
+  120  top -b -n1 | tail -n+8 | cut -c7- | tr -s '' '\t' | cut -f11 | sort | less
+  121  top -b -n1 | tail -n+8 | cut -c7- | tr -s '' '\t' | cut -f11,5 | sort | less
+  122  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t' | cut -f11,5 | sort | less
+  123  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t' | cut -f11 | sort | less
+  124  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t' | cut -f11, 5 | less
+  125  top -b -n1 | tail -n+8 | cut -c7- | tr -s ' ' '\t' | cut -f11,5 | less
+  126  cat /etc/passwd
+  127  sort | ter ":" " "
+  128  sort /etc/passwd | ter ":" " "
+  129  sort /etc/passwd | tr ":" " "
+  130  cut -f1,7 /etc/passwd | sort
+  131  cut -d: -f1,7 /etc/passwd | sort
+  132  sudo yum install -y giy
+  133  sudo yum install -y git
+  134  cd /usr/share/doc/git-1.8.3.1/
+  135  cat user-manual.txt | tr ' ' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head -5
+  136  ping ya.ru
+  137  ping google.com
+  138  curl wttr.in
+  139  hostname -I
+  140  hostname 
+  141  hostname  -I
+  142  curl ifconfig.me
+  143  sudo curl ifconfig.me
+  144  sudo vim /var/log/messages
+  145  cd 
+  146  ll
+  147  rm animals
+  148  rm -rf animals/
+  149  rm passwd 
+  150  ll
+  151  history > lab1_history.txt
