@@ -1,0 +1,79 @@
+    1  ll
+    2  ls -l
+    3  cd /
+    4  ll
+    5  vim
+    6  yum install vim
+    7  sudo yum install vim
+    8  sudo su
+    9  sudo root
+   10  exit
+   11  exit
+   12  ls
+   13  mkdir test
+   14  cd test/
+   15  touch file && ll
+   16  chmod 000 file
+   17  ll
+   18  echo "test" > file
+   19  cat file
+   20  chmod 200 file
+   21  ll
+   22  chmod 230 file && ll
+   23  chmod 210 file && ll
+   24  chmod 240 file && ll
+   25  cat file
+   26  chmod 640 file && ll
+   27  cat file
+   28  echo "test" > file
+   29  cat file
+   30  mkdir dir
+   31  cd dir
+   32  touch new_file && echo "file 2" > newfile
+   33  ll
+   34  touch new_file && echo "file 2" > new_file
+   35  cat new_file 
+   36  rm newfile 
+   37  ll
+   38  chmod -h
+   39  chmod --help
+   40  cd ..
+   41  ll
+   42  chmod 664 dir
+   43  ll
+   44  cat dir/new_file 
+   45  chown root file && chgrp root file
+   46  chown root:root file
+   47  ll
+   48  sudo chown root:root file
+   49  ll
+   50  umask 200
+   51  umask 600 
+   52  touch file1
+   53  ll
+   54  umask 006
+   55  touch file2
+   56  ll
+   57  rm file1 file2
+   58  sudo rm file1 file2
+   59  ls
+   60  umask 066
+   61  touch file1
+   62  ll
+   63  umask 000
+   64  touch file2
+   65  ll
+   66  sudo yum install tmux
+   67  tmux
+   68  sudo yum install tmux
+   69  sudo su
+   70  cat file
+   71  sudo su
+   72  cat file
+   73  sudo chgrp tech file
+   74  ll
+   75  cat file
+   76  ls -lR
+   77  ls ~/
+   78  ls -lR &> ../lab2_ls.txt
+   79  history &> ../lab2_history.txt
