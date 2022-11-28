@@ -69,10 +69,10 @@
 `sudo find / -type d -name '*.svn' -exec rm -rfv {} \; `
 
 1. Найдите все **файлы** (и только файлы) с расширением `sh` и добавьтем им право на исполнение.
-`sudo find . -type f -name '*.sh' -exec chmod 755 {} \;`
+`sudo find / -type f -name '*.sh' -exec chmod 755 {} \;`
 
 1. Найдите все **файлы** (и только файлы) с расширением `conf` в каталоге `/etc` и подсчитайте их суммарный размер, используя команду du.
-`sudo find /etc -maxdepth 1 -type f -name '*.conf' | xargs du -a`
+`sudo find /etc -maxdepth 1 -type f -name '*.conf' | xargs -d '\n' du -bch | tail -1`
 
 
 Протестируйте команды, которые вы написали выше, для файлов и каталогов, в именах которых содержатся пробелы и специальные символы, такие как `!` и `&`.
@@ -80,16 +80,16 @@
 Используя команду `grep`:
 
 1. Из файла `/var/log/messages` вывести строки, содержащие ключевое слово `ERROR`, без учёта регистра.
-`sudo cat /var/log/messages | grep '[Ee][Rr][Rr][Oo][Rr]'`
+`sudo cat /var/log/messages | grep -i 'error'`
 
 1. Из файла `/var/log/messages` вывести **количество** строк, **не** содержащих ключевое слово `ERROR`, без учёта регистра.
 `sudo cat /var/log/messages | grep -civ 'error'`
 
 1. Из файла `/var/log/messages` вывести строки, содержащие **только слово `ERROR` целиком**, с учётом регистра.
-`sudo cat /var/log/messages | grep -E "^ERROR\s"`
+`sudo cat /var/log/messages | grep '\bERROR\b'`
 
 1. Вывести количество строк из файла `/etc/group`, совпадающих с шаблоном `wheel`.
-`sudo cat /etc/group | grep -Ec"wheel"`
+`sudo cat /etc/group | grep -c 'wheel'`
 
 1. Найти во всех файлах из текущего каталога и вложенных подкаталогов строки, содержащие шаблон `#!bin/bash`.
 `find ./* -type f -exec cat {} \; | grep '#!bin/bash'`
@@ -98,10 +98,10 @@
 `find ./* -type f -exec cat {} \; | grep -A 10 '#!bin/bash'`
 
 1. Найти во всех файлах с расширением `sh` из текущего каталога и вложенных подкаталогов строки, содержащие слово `echo` **целиком**. В выводе команды `grep` найденные слова выделите цветом.
-`find ./* -type f -name '*.sh' -exec cat {} \; | grep --color 'echo'`
+`find ./* -type f -name '*.sh' -exec cat {} \; | grep --color '\becho\b'`
 
 1. Измените предыдущую команду таким образом, чтобы команда grep отображала также имя файла и номер строки, в которой было обнаружено совпадение с шаблоном.
-`find ./* -type f -name '*.sh' -exec cat {} \; | grep -Hn --color 'echo'`
+`find ./* -type f -name '*.sh' -exec cat {} \; | grep -Hn --color '\becho\b'`
 
 # Отчёт по лабораторной работе
 
